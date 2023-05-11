@@ -26,8 +26,8 @@ async function prePopulateDB(){
                 base_unit:"",
             })
             await obj.save();
+            console.log('Databse successfully pre-populated')
         }
-        console.log('Databse successfully pre-populated')
     }
     catch(error){
         console.log(error, 'Error in prepopulating of database')
