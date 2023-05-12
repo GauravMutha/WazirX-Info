@@ -1,0 +1,29 @@
+.footer{
+    bottom: 0;
+    padding: 13px;
+    box-sizing: border-box;
+    width: 100%;
+    color: #888686;
+}
+.inside_footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-text {
+    margin-right: 10px; /* Added this line for spacing */
+  }
+  
+  .footer_link {
+    margin-left: auto; /* Added this line */
+  }
+  .mail{
+    text-decoration: none;
+    color: inherit;
+}
+
+.dark, .footer{
+    border-top: 1px solid #2e3241;
+}
