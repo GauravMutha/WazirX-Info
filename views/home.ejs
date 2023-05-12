@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>MY APP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/home.css">
     <link rel="stylesheet" href="/header.css">
     <link rel="stylesheet" href="/footer.css">
@@ -13,16 +14,14 @@
 <body>
     <%- include('_header') %>
         <div class="middle-container">
-            <!-- <div class="loader_page"></div> -->
             <div class="table-container">
                 <table class="crypto-table">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Name</th>
-                            <th>Last</th>
-                            <th>Buy</th>
-                            <th>Sell</th>
+                            <th>Last Traded Price</th>
+                            <th>Buy/Sell Price</th>
                             <th>Voulme</th>
                             <th>Base Unit</th>
                         </tr>
@@ -30,15 +29,17 @@
                     <tbody>
                         <%let i=0%>
                         <% dataFromDB.forEach(row => { %>
+                            <%var lastPrice=parseInt(row.last)%>
+                            <%var buyPrice=parseInt(row.buy)%>
+                            <%var sellPrice=parseInt(row.sell)%>
                             <%i++%>
                           <tr class="dataRows">
-                            <td><%= i%></td>
+                            <td class="firstCell"><%= i%></td>
                             <td><%= row.name %></td>
-                            <td><%= row.last %></td>
-                            <td><%= row.buy %></td>
-                            <td><%= row.sell %></td>
+                            <td>₹<%= lastPrice.toLocaleString("en-IN") %></td>
+                            <td>₹<%= buyPrice.toLocaleString("en-IN") %>/₹<%= sellPrice.toLocaleString("en-IN") %></td>
                             <td><%= row.volume %></td>
-                            <td><%= row.base_unit %></td>
+                            <td class="lastCell"><%= row.base_unit %></td>
                           </tr>
                         <% }); %>
                     </tbody>

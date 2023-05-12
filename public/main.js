@@ -6,14 +6,6 @@ if (!savedTheme) {
   const defaultTheme = 'dark';
   localStorage.setItem('theme', defaultTheme);
 }
-
-// else if (localStorage.getItem('theme') === 'dark') {
-//     document.querySelector('.toggle').classList.remove('active');
-//     document.querySelector('body').classList.remove('themeChange');
-//     document.querySelector('.buy-link').classList.remove('themeChange');
-//     document.documentElement.style.setProperty("--bg-color", "#191d28")
-//     document.querySelector('td').classList.remove('themeChange');
-// }
 if(localStorage.getItem('theme') === 'light'){
     document.querySelector('.toggle').classList.add('active');
     document.querySelector('body').classList.add('themeChange');
@@ -28,12 +20,14 @@ setInterval(()=>{
     .then(data => {
         data.forEach((d,ind)=>{
             const cells=tableBodyRows[ind].querySelectorAll('td')
+            var lastPrice=parseInt(d.last)
+            var buyPrice=parseInt(d.buy)
+            var sellPrice=parseInt(d.sell)
             cells[1].textContent=d.name;
-            cells[2].textContent=d.last;
-            cells[3].textContent=d.buy;
-            cells[4].textContent=d.sell;
-            cells[5].textContent=d.volume;
-            cells[6].textContent=d.base_unit;
+            cells[2].textContent='₹'+lastPrice.toLocaleString("en-IN")
+            cells[3].textContent='₹'+buyPrice.toLocaleString("en-IN") + '/₹'+sellPrice.toLocaleString("en-IN");
+            cells[4].textContent=d.volume;
+            cells[5].textContent=d.base_unit;
         })
     })
 },60000)

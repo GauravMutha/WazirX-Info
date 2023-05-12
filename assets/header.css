@@ -12,6 +12,7 @@
   
   .navbar__logo {
     font-size: 58px;
+    font-family: 'Montserrat';
     font-weight: bold;
     color: #3dc6c1;
   }
@@ -120,4 +121,16 @@
 .buy-link.themeChange{
   background-color: rgb(243, 238, 238);
   color: black;
+}
+
+.inside_anchor{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.tele-logo{
+  height: 15px;
+  margin-right: 5px;
 }

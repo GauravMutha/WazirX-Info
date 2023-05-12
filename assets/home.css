@@ -10,52 +10,23 @@ body, html {
 }
 body{
     background-color: #191d28;
+    font-family: 'Oswald',sans-serif;
 }
 
-.bottom_fixed{
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-}
 
 .middle-container{
     padding-top: 70px;
     width: 100%;
     max-width: 100%;
-    height: 710px;
+    height: 990px;
     position: relative;
-    margin-bottom: 70px;
+    margin-bottom: 65px;
 }
 
 
-.loader_page {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color and opacity as desired */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.loader_hidden{
-    display: none;
-}
-
-.loader_page::after{
-    content: "";
-    width:50px;
-    height:50px;
-    border:15px solid #dddd;
-    border-top-color:#009578;
-    border-radius :50%;
-    animation: loading  1.5s ease infinite;
-}
-@keyframes loading {
-    from{transform: rotate(0turn)}
-    to{transform: rotate(1turn)}
+.table-container{
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .crypto-table {
@@ -64,7 +35,19 @@ body{
     border-collapse: separate; /* Collapse the table borders */
     border-spacing: 0 1em;
     color: #212529;
+    line-height: 2.1;
   }
+
+  td.firstCell {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  td.lastCell {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
   
   .crypto-table th,
   .crypto-table td {
@@ -79,7 +62,15 @@ body{
   .crypto-table th {
     color: #72757b;
     background-color: inherit;
+    font-weight: bold;
+    letter-spacing: 1.2px;
   }
+
+  .crypto-table td {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+  
   
   /* light theme */
 .themeChange{
